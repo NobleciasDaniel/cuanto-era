@@ -61,7 +61,6 @@ a:hover {
   width: min(var(--content), calc(100% - 48px));
   min-height: 74px;
   align-items: center;
-  justify-content: space-between;
   margin: 0 auto;
   border-bottom: 1px solid var(--line);
 }
@@ -94,16 +93,6 @@ a:hover {
   stroke-width: 2.1;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-.repo-link {
-  color: var(--muted);
-  font-size: 0.78rem;
-  text-decoration: none;
-}
-
-.repo-link::after {
-  content: " ↗";
 }
 
 .page-shell {
@@ -386,15 +375,6 @@ code {
 }
 
 @media (max-width: 480px) {
-  .repo-link {
-    font-size: 0;
-  }
-
-  .repo-link::after {
-    font-size: 0.78rem;
-    content: "GitHub ↗";
-  }
-
   .summary ul {
     grid-template-columns: 1fr;
   }
