@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280">
+  <rect width="440" height="280" fill="#f2f1ec"/>
+  <rect x="34" y="36" width="112" height="112" rx="31" fill="#176b52"/>
+  <circle cx="90" cy="92" r="31" fill="none" stroke="#fbfaf6" stroke-width="10"/>
+  <polyline points="90,73 90,95 105,104" fill="none" stroke="#fbfaf6" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+  <text x="34" y="188" fill="#1e241f" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="30" font-weight="700">Cuánto Era</text>
+  <text x="34" y="216" fill="#687068" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="14">Recuerda cuánto costaba.</text>
+  <rect x="248" y="38" width="158" height="204" rx="12" fill="#fbfaf6" stroke="#d7d9d2"/>
+  <text x="270" y="70" fill="#687068" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600">HISTORIAL LOCAL</text>
+  <text x="270" y="104" fill="#1e241f" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="700">$1,299</text>
+  <line x1="270" y1="124" x2="384" y2="124" stroke="#d7d9d2"/>
+  <text x="270" y="151" fill="#687068" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="11">Antes</text>
+  <text x="384" y="151" fill="#1e241f" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" text-anchor="end">$1,499</text>
+  <text x="270" y="180" fill="#687068" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="11">Cambio</text>
+  <text x="384" y="180" fill="#176b52" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700" text-anchor="end">−13.3%</text>
+  <rect x="270" y="201" width="114" height="22" rx="5" fill="#dfede7"/>
+  <text x="327" y="216" fill="#176b52" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="700" text-anchor="middle">GUARDADO LOCALMENTE</text>
+</svg>

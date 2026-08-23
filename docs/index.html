@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Política de privacidad de Cuánto Era, una extensión de Chrome que guarda precios localmente.">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+    <title>Privacidad — Cuánto Era</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Cuánto Era, inicio">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="1" y="1" width="30" height="30" rx="7"></rect>
+          <path d="M9 10.5 21.5 23M14.5 23h7v-7"></path>
+        </svg>
+        <span>Cuánto Era</span>
+      </a>
+      <a class="repo-link" href="https://github.com/NobleciasDaniel/cuanto-era">Código fuente</a>
+    </header>
+
+    <main id="contenido" class="page-shell">
+      <aside class="summary" aria-label="Resumen de privacidad">
+        <p class="section-label">En breve</p>
+        <ul>
+          <li>Sin cuentas</li>
+          <li>Sin servidor del editor</li>
+          <li>Sin analítica ni anuncios</li>
+          <li>Historial solo en tu navegador</li>
+        </ul>
+        <div class="revision">
+          <span>Última revisión</span>
+          <time datetime="2026-08-23">23.08.2026</time>
+        </div>
+      </aside>
+
+      <article class="policy">
+        <header class="policy-header">
+          <p class="kicker">Documento público · versión 1.0</p>
+          <h1>Política de privacidad</h1>
+          <p class="lead">Cuánto Era recuerda precios sin crear un perfil sobre ti. La extensión procesa la página que eliges y conserva el historial en el almacenamiento local de Chrome; el editor no recibe esos datos.</p>
+        </header>
+
+        <div class="plain-statement">
+          <strong>Lo esencial</strong>
+          <p>La extensión necesita leer la pestaña activa para reconocer un producto. Esa lectura ocurre al abrir Cuánto Era. Nada se guarda hasta que eliges <em>Guardar este precio</em>.</p>
+        </div>
+
+        <section id="alcance">
+          <div class="section-number">01</div>
+          <div>
+            <h2>Alcance y responsable</h2>
+            <p>Esta política describe el funcionamiento de la extensión de Chrome Cuánto Era, publicada por Daniel Noblecias bajo la cuenta <a href="https://github.com/NobleciasDaniel">NobleciasDaniel</a>. No cubre las tiendas que visitas ni los servicios de Chrome o GitHub, que operan conforme a sus propias políticas.</p>
+          </div>
+        </section>
+
+        <section id="datos">
+          <div class="section-number">02</div>
+          <div>
+            <h2>Información que procesa la extensión</h2>
+            <p>Al abrirla desde una página de producto, Cuánto Era puede reconocer los siguientes datos visibles o publicados por la tienda:</p>
+            <ul class="detail-list">
+              <li>título, tienda, dominio y dirección web del producto;</li>
+              <li>identificador y variante, cuando están disponibles;</li>
+              <li>precio actual, precio anterior mostrado y moneda;</li>
+              <li>vendedor, disponibilidad y texto breve de entrega;</li>
+              <li>fecha y hora de la captura.</li>
+            </ul>
+            <p>Cuánto Era no solicita nombre, correo, teléfono, datos de pago, contraseñas, cookies ni credenciales. Sin embargo, una tienda podría incluir información personalizada en su dirección web o texto de entrega; si el usuario decide guardar el estado, ese texto podría conservarse localmente como parte del registro.</p>
+          </div>
+        </section>
+
+        <section id="momentos">
+          <div class="section-number">03</div>
+          <div>
+            <h2>Cuándo se procesa y cuándo se conserva</h2>
+            <div class="data-table" role="table" aria-label="Momentos del tratamiento">
+              <div class="data-row data-head" role="row">
+                <span role="columnheader">Momento</span>
+                <span role="columnheader">Qué ocurre</span>
+                <span role="columnheader">Persistencia</span>
+              </div>
+              <div class="data-row" role="row">
+                <strong role="cell">Al abrir</strong>
+                <span role="cell">Se analiza temporalmente la pestaña activa.</span>
+                <span role="cell">No se crea un registro.</span>
+              </div>
+              <div class="data-row" role="row">
+                <strong role="cell">Al guardar</strong>
+                <span role="cell">Se crea o actualiza el historial del producto.</span>
+                <span role="cell">Permanece en Chrome.</span>
+              </div>
+              <div class="data-row" role="row">
+                <strong role="cell">En segundo plano</strong>
+                <span role="cell">Solo se actualiza el contador de productos guardados.</span>
+                <span role="cell">No se observan páginas.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="almacenamiento">
+          <div class="section-number">04</div>
+          <div>
+            <h2>Almacenamiento, retención y eliminación</h2>
+            <p>Los registros se guardan mediante <code>chrome.storage.local</code> en el perfil de Chrome del dispositivo. No se sincronizan entre equipos. Cada producto conserva hasta 500 estados.</p>
+            <p>Los datos permanecen hasta que el usuario elimina un producto, conserva únicamente su último estado, reemplaza la base mediante una importación o desinstala la extensión. Chrome elimina el almacenamiento local asociado cuando se desinstala Cuánto Era.</p>
+          </div>
+        </section>
+
+        <section id="transferencias">
+          <div class="section-number">05</div>
+          <div>
+            <h2>Transferencias y monetización</h2>
+            <p>La extensión no envía el historial, las páginas examinadas ni los datos de producto al editor o a terceros. No existen servidores de Cuánto Era, cuentas, telemetría, analítica, anuncios ni programas de afiliados. Los datos no se venden, no se utilizan para perfilar usuarios y no son revisados por personas.</p>
+            <p>Abrir el enlace de un producto es una acción explícita del usuario y conduce al sitio de la tienda. A partir de ese momento se aplican las prácticas de privacidad de esa tienda.</p>
+          </div>
+        </section>
+
+        <section id="permisos">
+          <div class="section-number">06</div>
+          <div>
+            <h2>Permisos de Chrome</h2>
+            <dl class="permissions">
+              <div>
+                <dt>activeTab</dt>
+                <dd>Concede acceso temporal a la pestaña elegida cuando el usuario abre la extensión.</dd>
+              </div>
+              <div>
+                <dt>scripting</dt>
+                <dd>Ejecuta en esa pestaña el extractor incluido dentro de la extensión.</dd>
+              </div>
+              <div>
+                <dt>storage</dt>
+                <dd>Conserva localmente los productos y precios que el usuario decide guardar.</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <section id="control">
+          <div class="section-number">07</div>
+          <div>
+            <h2>Control del usuario y seguridad</h2>
+            <p>El panel de historial permite consultar, exportar y eliminar los registros sin solicitar intervención del editor. La exportación crea un archivo JSON en el dispositivo; la importación lee únicamente el archivo seleccionado por el usuario.</p>
+            <p>Cuánto Era no ejecuta código remoto. El historial queda protegido por las medidas del dispositivo y del perfil de Chrome. La extensión no añade una capa propia de cifrado, por lo que cualquier persona con acceso al perfil de Chrome podría acceder a esos registros.</p>
+          </div>
+        </section>
+
+        <section id="uso-limitado">
+          <div class="section-number">08</div>
+          <div>
+            <h2>Compromiso de uso limitado</h2>
+            <p>La información se utiliza exclusivamente para la función visible de identificar productos, guardar estados de precio y compararlos. El uso de información obtenida mediante las APIs de Chrome cumple con la Política de Datos de Usuario de Chrome Web Store, incluidos sus requisitos de Uso Limitado.</p>
+          </div>
+        </section>
+
+        <section id="sitio-y-cambios">
+          <div class="section-number">09</div>
+          <div>
+            <h2>Este sitio, cambios y contacto</h2>
+            <p>Esta página informativa se aloja mediante GitHub Pages. GitHub puede registrar datos técnicos de conexión, incluida la dirección IP, por motivos de seguridad conforme a su <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">declaración de privacidad</a>. Esto es independiente de la extensión: Cuánto Era no envía datos del historial a esta página.</p>
+            <p>Si las prácticas de la extensión cambian, esta política mostrará una nueva fecha de revisión y los cambios materiales se comunicarán antes de aplicarse. Para consultas de privacidad o soporte, abre una <a href="https://github.com/NobleciasDaniel/cuanto-era/issues/new">consulta en GitHub</a>. No incluyas contraseñas, direcciones ni información de pago.</p>
+          </div>
+        </section>
+
+        <footer class="policy-footer">
+          <span>Cuánto Era · Política de privacidad</span>
+          <a href="#contenido">Volver arriba</a>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vista previa del historial</title>
+    <link rel="stylesheet" href="../src/dashboard/dashboard.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#main">
+          <img src="../icons/icon32.png" alt="">
+          <strong>Cuánto Era</strong>
+        </a>
+        <p class="summary">2 productos · 5 capturas · 2 tiendas</p>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="page-heading">
+        <div>
+          <p>HISTORIAL LOCAL</p>
+          <h1>Productos guardados</h1>
+        </div>
+        <span>Compara capturas antes de volver a comprar.</span>
+      </header>
+
+      <section class="toolbar" aria-label="Filtros y acciones">
+        <label class="search-field"><span>⌕</span><input type="search" placeholder="Buscar por producto o tienda"></label>
+        <label class="select-field"><select><option>Todas las tiendas</option></select></label>
+        <div class="toolbar-actions">
+          <button class="secondary-button" type="button">Exportar</button>
+          <button class="secondary-button" type="button">Importar</button>
+        </div>
+      </section>
+      <p class="feedback"></p>
+
+      <section class="product-list">
+        <article class="product-card">
+          <div class="product-main">
+            <div class="product-copy">
+              <span class="store">TIENDA EJEMPLO · tienda.example</span>
+              <h2>Cafetera automática compacta con molino ajustable</h2>
+              <p class="variant">color: grafito</p>
+            </div>
+            <div class="price-column">
+              <span>Capturado 22 ago 2026, 9:52 p.m.</span>
+              <strong>MXN 2,199.00</strong>
+              <div class="price-actions"><span class="change down">−MXN 150.00 · −6.4%</span><span class="visit-link">Abrir producto ↗</span></div>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric"><span>Mínimo</span><strong>MXN 2,199.00</strong></div>
+            <div class="metric"><span>Máximo</span><strong>MXN 2,499.00</strong></div>
+            <div class="metric"><span>Capturas</span><strong>3</strong></div>
+          </div>
+          <div class="trend">
+            <svg class="chart" viewBox="0 0 640 120" role="img" aria-label="Tendencia de precio">
+              <polygon class="chart-area" points="10,110 10,16 320,48 630,104 630,110"></polygon>
+              <polyline class="chart-line" points="10,16 320,48 630,104"></polyline>
+              <circle class="chart-dot" cx="10" cy="16" r="4"></circle>
+              <circle class="chart-dot" cx="320" cy="48" r="4"></circle>
+              <circle class="chart-dot" cx="630" cy="104" r="4"></circle>
+            </svg>
+          </div>
+          <details class="history-details"><summary>Historial de precios (3)</summary></details>
+          <div class="card-actions"><button class="text-button" type="button">Conservar solo el último</button><button class="text-button danger" type="button">Eliminar producto</button></div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-main">
+            <div class="product-copy">
+              <span class="store">MERCADO LIBRE · mercadolibre.com.mx</span>
+              <h2>Audífonos inalámbricos con cancelación de ruido</h2>
+              <p class="variant">color: negro</p>
+            </div>
+            <div class="price-column">
+              <span>Capturado 20 ago 2026, 6:14 p.m.</span>
+              <strong>MXN 1,299.00</strong>
+              <div class="price-actions"><span class="change">Sin cambio</span><span class="visit-link">Abrir producto ↗</span></div>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric"><span>Mínimo</span><strong>MXN 1,299.00</strong></div>
+            <div class="metric"><span>Máximo</span><strong>MXN 1,299.00</strong></div>
+            <div class="metric"><span>Capturas</span><strong>2</strong></div>
+          </div>
+          <details class="history-details"><summary>Historial de precios (2)</summary></details>
+          <div class="card-actions"><button class="text-button" type="button">Conservar solo el último</button><button class="text-button danger" type="button">Eliminar producto</button></div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

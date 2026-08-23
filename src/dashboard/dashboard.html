@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Productos guardados · Cuánto Era</title>
+    <link rel="stylesheet" href="dashboard.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#main" aria-label="Cuánto Era, ir al contenido">
+          <img src="../../icons/icon32.png" alt="">
+          <strong>Cuánto Era</strong>
+        </a>
+        <p id="summary" class="summary" aria-live="polite"></p>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="page-heading">
+        <div>
+          <p>HISTORIAL LOCAL</p>
+          <h1>Productos guardados</h1>
+        </div>
+        <span>Compara capturas antes de volver a comprar.</span>
+      </header>
+
+      <section class="toolbar" aria-label="Filtros y acciones">
+        <label class="search-field">
+          <span aria-hidden="true">⌕</span>
+          <input id="search" type="search" aria-label="Buscar por producto o tienda" placeholder="Buscar por producto o tienda" autocomplete="off">
+        </label>
+        <label class="select-field">
+          <span class="sr-only">Filtrar por tienda</span>
+          <select id="store-filter">
+            <option value="">Todas las tiendas</option>
+          </select>
+        </label>
+        <div class="toolbar-actions">
+          <button id="export" class="secondary-button" type="button">Exportar</button>
+          <button id="import" class="secondary-button" type="button">Importar</button>
+          <input id="import-file" type="file" accept="application/json,.json" hidden>
+        </div>
+      </section>
+
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+
+      <section id="empty" class="empty" hidden>
+        <span aria-hidden="true">—</span>
+        <h2>Todavía no hay productos</h2>
+        <p>Abre Cuánto Era desde una página de producto y guarda su precio.</p>
+      </section>
+
+      <section id="product-grid" class="product-list" aria-live="polite"></section>
+    </main>
+
+    <footer>
+      Los precios y el historial permanecen en este navegador.
+      <a href="../privacy/privacy.html">Privacidad</a>
+    </footer>
+
+    <script type="module" src="dashboard.js"></script>
+  </body>
+</html>

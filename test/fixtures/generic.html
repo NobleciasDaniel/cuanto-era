@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Cafetera · Tienda Demo</title>
+    <link rel="canonical" href="https://shop.example/products/cafetera?color=rojo&utm_source=mail">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [{
+          "@type": "Product",
+          "name": "Cafetera automática",
+          "sku": "CAF-42",
+          "image": ["https://shop.example/images/cafetera.jpg"],
+          "brand": {"@type": "Brand", "name": "Demo Home"},
+          "offers": {
+            "@type": "Offer",
+            "price": "2345.50",
+            "priceCurrency": "MXN",
+            "availability": "https://schema.org/InStock",
+            "seller": {"@type": "Organization", "name": "Tienda Demo"}
+          }
+        }]
+      }
+    </script>
+  </head>
+  <body><main><h1>Cafetera automática</h1></main></body>
+</html>
