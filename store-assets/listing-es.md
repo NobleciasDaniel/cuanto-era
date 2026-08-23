@@ -18,6 +18,7 @@ Funciones:
 
 - Captura manual desde la pestaña activa.
 - Compatible con Amazon, Mercado Libre y páginas de producto de otras tiendas.
+- Miniatura local del producto obtenida de la pestaña visible.
 - Historial separado por producto y variante.
 - Comparación entre precios de la misma moneda.
 - Búsqueda, filtros y acceso rápido al producto original.
@@ -26,7 +27,7 @@ Funciones:
 
 Privacidad:
 
-Cuánto Era procesa únicamente la pestaña activa cuando pulsas su icono. Los precios que decides guardar permanecen en el almacenamiento local de Chrome y no se envían al editor ni a terceros.
+Cuánto Era procesa únicamente la pestaña activa cuando pulsas su icono. Los precios y la miniatura del producto que decides guardar permanecen en el almacenamiento local de Chrome y no se envían al editor ni a terceros.
 
 La detección depende de la información publicada por cada tienda. Verifica el precio final, moneda, envío y condiciones en el sitio antes de comprar. Cuánto Era no está afiliada, patrocinada ni respaldada por Amazon, Mercado Libre u otras tiendas compatibles.
 
@@ -42,7 +43,7 @@ Permitir que el usuario capture manualmente el precio visible de un producto en 
 
 ### activeTab
 
-Concede acceso temporal a la pestaña activa únicamente después de que el usuario pulsa el icono de la extensión. Se usa para reconocer el producto y su precio visible.
+Concede acceso temporal a la pestaña activa únicamente después de que el usuario pulsa el icono de la extensión. Se usa para reconocer el producto, su precio visible y crear una miniatura local del área donde aparece su imagen.
 
 ### scripting
 
@@ -54,7 +55,7 @@ Almacena localmente los productos y precios que el usuario decide guardar, adem�
 
 ## Declaración de datos
 
-- Contenido de sitios web: sí, limitado a los campos del producto necesarios para la función visible.
+- Contenido de sitios web: sí, limitado a los campos y la imagen visible del producto necesarios para la función principal.
 - Actividad web: sí, la URL del producto elegido se guarda para identificarlo y permitir volver a abrirlo.
 - Información financiera del usuario: no.
 - Información de identificación personal: no.

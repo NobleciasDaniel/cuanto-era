@@ -1,5 +1,6 @@
 import { comparePrices, summarizeHistory } from "../shared/compare.js";
 import { STORE_LABELS } from "../shared/constants.js";
+import { isLocalProductImage } from "../shared/image.js";
 import { formatMoney } from "../shared/price.js";
 import { StorageRepository } from "../shared/storage.js";
 
@@ -131,12 +132,20 @@ function createCard(product) {
   card.dataset.productId = product.id;
 
   const heading = element("div", "product-main");
+  const identity = element("div", "product-identity");
+  if (isLocalProductImage(product.image)) {
+    const thumbnail = element("img", "product-thumbnail");
+    thumbnail.src = product.image;
+    thumbnail.alt = "";
+    identity.append(thumbnail);
+  }
   const copy = element("div", "product-copy");
   copy.append(element("span", "store", `${STORE_LABELS[product.store] ?? product.domain} · ${product.domain}`));
   copy.append(element("h2", "", product.title));
   const variation = variantLabel(product.variant);
   if (variation) copy.append(element("p", "variant", variation));
-  heading.append(copy);
+  identity.append(copy);
+  heading.append(identity);
 
   const priceColumn = element("div", "price-column");
   priceColumn.append(

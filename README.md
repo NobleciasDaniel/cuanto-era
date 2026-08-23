@@ -13,6 +13,7 @@ Todo se almacena en `chrome.storage.local`. La extensión no incluye cuentas, te
 - Detección mediante JSON-LD `Product`/`Offer`, Open Graph, `itemprop` y heurísticas del DOM.
 - Identidad separada por producto y variante.
 - Precio actual, precio tachado, moneda, vendedor, disponibilidad y envío.
+- Miniatura local del producto, creada desde la pestaña visible sin descargar recursos externos.
 - Historial sin estados duplicados.
 - Comparación monetaria y porcentual.
 - Precios mínimo y máximo.
@@ -92,7 +93,7 @@ Los campos esenciales son `title`, `canonicalUrl` y `price`. Es recomendable pro
 
 ## Datos guardados
 
-Cada registro puede incluir fecha, precio, precio original, moneda, vendedor, disponibilidad y envío. El producto conserva título, enlace canónico, tienda, identificador y variante. Se almacenan como máximo 500 estados por producto.
+Cada registro puede incluir fecha, precio, precio original, moneda, vendedor, disponibilidad y envío. El producto conserva título, enlace canónico, tienda, identificador, variante y una miniatura local. Se almacenan como máximo 500 estados por producto.
 
 ## Paquete para Chrome Web Store
 

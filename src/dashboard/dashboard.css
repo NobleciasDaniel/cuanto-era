@@ -117,6 +117,17 @@ h1 { margin: 0; font-size: 28px; line-height: 1.1; letter-spacing: -.035em; }
   gap: 14px;
   align-items: start;
 }
+.product-identity { display: flex; gap: 12px; min-width: 0; align-items: flex-start; }
+.product-thumbnail {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  object-fit: contain;
+  background: #fff;
+}
 .product-copy { min-width: 0; }
 .store { color: var(--accent); font-size: 9px; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
 .product-card h2 {

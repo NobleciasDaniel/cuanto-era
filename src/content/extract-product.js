@@ -147,6 +147,27 @@
     return normalizeText(value);
   };
 
+  const imageRectFromElement = (element) => {
+    if (!element || typeof element.getBoundingClientRect !== "function") return null;
+    const rect = element.getBoundingClientRect();
+    const viewportWidth = Number(globalThis.innerWidth) || document.documentElement?.clientWidth || 0;
+    const viewportHeight = Number(globalThis.innerHeight) || document.documentElement?.clientHeight || 0;
+    const left = Math.max(0, rect.left);
+    const top = Math.max(0, rect.top);
+    const right = Math.min(viewportWidth, rect.right);
+    const bottom = Math.min(viewportHeight, rect.bottom);
+    if (right - left < 24 || bottom - top < 24 || !viewportWidth || !viewportHeight) return null;
+    return { left, top, width: right - left, height: bottom - top, viewportWidth, viewportHeight };
+  };
+
+  const visibleImageRect = (...selectors) => {
+    for (const selector of selectors.flat()) {
+      const rect = imageRectFromElement(document.querySelector(selector));
+      if (rect) return rect;
+    }
+    return null;
+  };
+
   const sellerValue = (value) => {
     if (value && typeof value === "object") return first(value.name, value.legalName);
     return normalizeText(value);
@@ -244,6 +265,7 @@
       canonicalUrl,
       title: text("#productTitle", "#title"),
       image: normalizeUrl(first(attribute(["#landingImage"], "data-old-hires"), attribute(["#landingImage"], "src"))),
+      imageRect: visibleImageRect("#landingImage", "#imgBlkFront"),
       price: parsePrice(priceText),
       priceText,
       originalPrice: parsePrice(text(".basisPrice .a-offscreen", ".a-text-price .a-offscreen")),
@@ -279,6 +301,7 @@
       canonicalUrl: normalizeUrl(first(attribute(['link[rel="canonical"]'], "href"), currentUrl)),
       title: text("h1.ui-pdp-title", "h1"),
       image: normalizeUrl(first(attribute([".ui-pdp-gallery__figure img"], "src"), meta("og:image"))),
+      imageRect: visibleImageRect(".ui-pdp-gallery__figure img", ".ui-pdp-image"),
       price: parsePrice(priceText),
       priceText,
       originalPrice: parsePrice(text(".ui-pdp-price__original-value", ".andes-money-amount--previous")),
@@ -301,6 +324,7 @@
       canonicalUrl: normalizeUrl(first(attribute(['link[rel="canonical"]'], "href"), currentUrl)),
       title: first(text("h1", '[itemprop="name"]'), meta("og:title"), document.title),
       image: normalizeUrl(first(attribute(['[itemprop="image"]'], "src"), meta("og:image"))),
+      imageRect: visibleImageRect('[itemprop="image"]', "main img"),
       productId: first(meta("sku"), attribute(['[itemprop="sku"]'], "content"), text('[itemprop="sku"]')),
       price: parsePrice(priceText),
       priceText,
@@ -336,6 +360,12 @@
   product.url = currentUrl;
   product.canonicalUrl = normalizeUrl(first(product.canonicalUrl, currentUrl));
   product.image = normalizeUrl(product.image);
+  if (!product.imageRect && product.image) {
+    const matchingImage = [...document.querySelectorAll("img")].find((candidate) =>
+      normalizeUrl(candidate.currentSrc || candidate.src) === product.image
+    );
+    product.imageRect = imageRectFromElement(matchingImage);
+  }
   product.price = parsePrice(product.price ?? product.priceText);
   product.originalPrice = parsePrice(product.originalPrice);
   product.variant = product.variant && typeof product.variant === "object" ? product.variant : {};

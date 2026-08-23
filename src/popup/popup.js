@@ -1,5 +1,6 @@
 import { comparePrices, summarizeHistory } from "../shared/compare.js";
 import { STORE_LABELS } from "../shared/constants.js";
+import { isLocalProductImage } from "../shared/image.js";
 import { formatMoney } from "../shared/price.js";
 import { prepareProduct } from "../shared/product.js";
 import { StorageRepository } from "../shared/storage.js";
@@ -7,7 +8,7 @@ import { StorageRepository } from "../shared/storage.js";
 const repository = new StorageRepository();
 const elements = Object.fromEntries(
   [
-    "status", "product", "store", "product-title", "variant",
+    "status", "product", "store", "product-title", "product-image", "variant",
     "current-price", "original-price", "comparison", "previous-price", "previous-date",
     "change-card", "change-value", "change-label", "history-stats", "minimum-price",
     "maximum-price", "history-count", "details", "save", "save-feedback", "open-dashboard"
@@ -33,6 +34,59 @@ function formatDate(value) {
 
 function formatVariant(variant) {
   return Object.entries(variant ?? {}).map(([key, value]) => `${key}: ${value}`).join(" · ");
+}
+
+function loadImage(source) {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.addEventListener("load", () => resolve(image), { once: true });
+    image.addEventListener("error", () => reject(new Error("No se pudo preparar la miniatura.")), { once: true });
+    image.src = source;
+  });
+}
+
+async function captureProductThumbnail(tab, rect) {
+  if (!rect || !tab?.windowId || !rect.viewportWidth || !rect.viewportHeight) return "";
+  try {
+    const screenshotUrl = await chrome.tabs.captureVisibleTab(tab.windowId, { format: "jpeg", quality: 82 });
+    const screenshot = await loadImage(screenshotUrl);
+    const scaleX = screenshot.naturalWidth / rect.viewportWidth;
+    const scaleY = screenshot.naturalHeight / rect.viewportHeight;
+    const source = {
+      x: Math.max(0, rect.left * scaleX),
+      y: Math.max(0, rect.top * scaleY),
+      width: Math.min(screenshot.naturalWidth - rect.left * scaleX, rect.width * scaleX),
+      height: Math.min(screenshot.naturalHeight - rect.top * scaleY, rect.height * scaleY)
+    };
+    if (source.width < 24 || source.height < 24) return "";
+
+    const size = 128;
+    const padding = 8;
+    const canvas = document.createElement("canvas");
+    canvas.width = size;
+    canvas.height = size;
+    const context = canvas.getContext("2d", { alpha: false });
+    if (!context) return "";
+    context.fillStyle = "#ffffff";
+    context.fillRect(0, 0, size, size);
+    const ratio = Math.min((size - padding * 2) / source.width, (size - padding * 2) / source.height);
+    const width = source.width * ratio;
+    const height = source.height * ratio;
+    context.drawImage(
+      screenshot,
+      source.x,
+      source.y,
+      source.width,
+      source.height,
+      (size - width) / 2,
+      (size - height) / 2,
+      width,
+      height
+    );
+    return canvas.toDataURL("image/webp", 0.72);
+  } catch {
+    return "";
+  }
 }
 
 function renderComparison(savedProduct) {
@@ -83,6 +137,11 @@ async function renderProduct(product) {
   elements.store.textContent = STORE_LABELS[product.store] ?? product.domain;
   elements["product-title"].textContent = product.title;
   elements["current-price"].textContent = formatMoney(product.price, product.currency);
+  if (isLocalProductImage(product.image)) {
+    elements["product-image"].src = product.image;
+    elements["product-image"].alt = `Imagen de ${product.title}`;
+    elements["product-image"].hidden = false;
+  }
 
   if (product.originalPrice && product.originalPrice > product.price) {
     elements["original-price"].textContent = formatMoney(product.originalPrice, product.currency);
@@ -113,7 +172,8 @@ async function extractCurrentProduct() {
   if (!extraction?.ok) {
     throw new Error(extraction?.error || "No fue posible reconocer un producto en esta página.");
   }
-  return prepareProduct(extraction.product);
+  const image = await captureProductThumbnail(tab, extraction.product.imageRect);
+  return prepareProduct({ ...extraction.product, image });
 }
 
 elements.save.addEventListener("click", async () => {

@@ -1,4 +1,5 @@
 import { createProductIdentity, normalizeText, normalizeVariant } from "./identity.js";
+import { normalizeLocalProductImage } from "./image.js";
 import { parsePrice, resolveCurrency } from "./price.js";
 import { domainFromUrl, normalizeProductUrl, storeFromDomain } from "./url.js";
 
@@ -40,6 +41,7 @@ export function prepareProduct(rawProduct) {
     productId: normalizeText(rawProduct.productId),
     canonicalUrl,
     title: normalizeText(rawProduct.title),
+    image: normalizeLocalProductImage(rawProduct.image),
     variant: normalizeVariant(rawProduct.variant),
     price,
     originalPrice: parsePrice(rawProduct.originalPrice),

@@ -21,7 +21,7 @@ test("la interfaz de producto evita los patrones visuales genéricos detectados"
   assert.match(dashboardHtml, /class="product-list"/i);
 });
 
-test("la interfaz declara privacidad y no carga recursos remotos", () => {
+test("la interfaz declara privacidad y solo muestra miniaturas locales", () => {
   const popupHtml = readFileSync(join(root, "src/popup/popup.html"), "utf8");
   const dashboardHtml = readFileSync(join(root, "src/dashboard/dashboard.html"), "utf8");
   const popupJs = readFileSync(join(root, "src/popup/popup.js"), "utf8");
@@ -29,5 +29,7 @@ test("la interfaz declara privacidad y no carga recursos remotos", () => {
   assert.match(popupHtml, /Nada se envía fuera del navegador/i);
   assert.match(popupHtml, /privacy\/privacy\.html/i);
   assert.doesNotMatch(`${popupHtml}\n${dashboardHtml}`, /<(?:img|iframe)[^>]+src=["']https?:/i);
-  assert.doesNotMatch(`${popupJs}\n${dashboardJs}`, /\.src\s*=\s*product\.image/);
+  assert.match(popupJs, /isLocalProductImage\(product\.image\)/);
+  assert.match(dashboardJs, /isLocalProductImage\(product\.image\)/);
+  assert.doesNotMatch(`${popupJs}\n${dashboardJs}`, /\.src\s*=\s*["'`]https?:/i);
 });

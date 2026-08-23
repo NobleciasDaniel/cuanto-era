@@ -1,5 +1,6 @@
 import { DATABASE_KEY, DATABASE_VERSION, MAX_HISTORY_PER_PRODUCT } from "./constants.js";
 import { snapshotsAreEquivalent } from "./compare.js";
+import { normalizeLocalProductImage } from "./image.js";
 
 function createEmptyDatabase() {
   return {
@@ -93,6 +94,7 @@ export class StorageRepository {
       productId: product.productId,
       canonicalUrl: product.canonicalUrl,
       title: product.title,
+      image: normalizeLocalProductImage(product.image) || existing?.image || "",
       variant: product.variant,
       adapter: product.adapter,
       createdAt: existing?.createdAt ?? capturedAt,
@@ -148,7 +150,7 @@ export class StorageRepository {
         productId: String(product.productId ?? "").slice(0, 160),
         canonicalUrl: product.canonicalUrl,
         title: String(product.title ?? "Producto importado").slice(0, 300),
-        image: "",
+        image: normalizeLocalProductImage(product.image),
         variant: product.variant && typeof product.variant === "object" && !Array.isArray(product.variant)
           ? product.variant
           : {},

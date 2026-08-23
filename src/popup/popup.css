@@ -105,7 +105,17 @@ main { padding: 16px; }
 .status.error .spinner { animation: none; border-color: var(--negative); }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-.product-overview { display: flex; align-items: flex-start; }
+.product-overview { display: flex; gap: 12px; align-items: flex-start; }
+.product-image {
+  width: 68px;
+  height: 68px;
+  flex: 0 0 auto;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  object-fit: contain;
+  background: #fff;
+}
 .product-copy { min-width: 0; }
 .store {
   display: block;

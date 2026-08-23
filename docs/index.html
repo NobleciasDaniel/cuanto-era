@@ -39,7 +39,7 @@
 
       <article class="policy">
         <header class="policy-header">
-          <p class="kicker">Documento público · versión 1.0</p>
+          <p class="kicker">Documento público · versión 1.1</p>
           <h1>Política de privacidad</h1>
           <p class="lead">Cuánto Era recuerda precios sin crear un perfil sobre ti. La extensión procesa la página que eliges y conserva el historial en el almacenamiento local de Chrome; el editor no recibe esos datos.</p>
         </header>
@@ -63,7 +63,7 @@
             <h2>Información que procesa la extensión</h2>
             <p>Al abrirla desde una página de producto, Cuánto Era puede reconocer los siguientes datos visibles o publicados por la tienda:</p>
             <ul class="detail-list">
-              <li>título, tienda, dominio y dirección web del producto;</li>
+              <li>título, tienda, dominio, dirección web e imagen visible del producto;</li>
               <li>identificador y variante, cuando están disponibles;</li>
               <li>precio actual, precio anterior mostrado y moneda;</li>
               <li>vendedor, disponibilidad y texto breve de entrega;</li>
@@ -106,7 +106,7 @@
           <div class="section-number">04</div>
           <div>
             <h2>Almacenamiento, retención y eliminación</h2>
-            <p>Los registros se guardan mediante <code>chrome.storage.local</code> en el perfil de Chrome del dispositivo. No se sincronizan entre equipos. Cada producto conserva hasta 500 estados.</p>
+            <p>Los registros y una miniatura de la imagen visible se guardan mediante <code>chrome.storage.local</code> en el perfil de Chrome del dispositivo. La miniatura se obtiene de la pestaña ya abierta y no provoca una nueva solicitud a la tienda. No se sincronizan entre equipos. Cada producto conserva hasta 500 estados.</p>
             <p>Los datos permanecen hasta que el usuario elimina un producto, conserva únicamente su último estado, reemplaza la base mediante una importación o desinstala la extensión. Chrome elimina el almacenamiento local asociado cuando se desinstala Cuánto Era.</p>
           </div>
         </section>

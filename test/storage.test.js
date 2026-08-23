@@ -26,7 +26,7 @@ function product(price = 1000) {
     productId: "B012345678",
     canonicalUrl: "https://amazon.com.mx/dp/B012345678",
     title: "Producto de prueba",
-    image: "",
+    image: "data:image/webp;base64,QUJDRA==",
     variant: { color: "Negro" },
     adapter: "amazon",
     price,
@@ -49,6 +49,7 @@ test("guarda estados y evita duplicados", async () => {
   assert.equal(changed.product.history.length, 2);
   assert.equal(changed.product.history.at(-1).price, 900);
   assert.equal(changed.product.lastSeenAt, "2026-01-03T00:00:00.000Z");
+  assert.equal(changed.product.image, "data:image/webp;base64,QUJDRA==");
 });
 
 test("reduce el historial y elimina productos", async () => {
@@ -83,6 +84,7 @@ test("importa una copia válida y combina historiales", async () => {
   await repository.importDatabase(imported, { merge: true });
   const merged = storage.data[DATABASE_KEY].products[product().id];
   assert.deepEqual(merged.history.map((entry) => entry.price), [1000, 800]);
+  assert.equal(merged.image, "data:image/webp;base64,QUJDRA==");
 });
 
 test("rechaza claves peligrosas al importar", async () => {

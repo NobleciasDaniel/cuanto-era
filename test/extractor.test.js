@@ -34,6 +34,7 @@ test("extrae Amazon y conserva la variante", () => {
   assert.equal(result.product.currency, "MXN");
   assert.equal(result.product.variant.Color, "Negro");
   assert.equal(result.product.canonicalUrl, "https://amazon.com.mx/dp/B012345678");
+  assert.equal(result.product.image, "https://images.example/amazon-product.jpg");
 });
 
 test("extrae Mercado Libre", () => {

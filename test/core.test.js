@@ -41,6 +41,19 @@ test("prepara el precio real de Amazon aunque su dominio principal sea estadouni
   assert.equal(product.currency, "MXN");
 });
 
+test("solo admite miniaturas locales y rechaza imágenes remotas", () => {
+  const base = {
+    canonicalUrl: "https://amazon.com.mx/dp/B012345678",
+    title: "Producto",
+    price: 100,
+    currency: "MXN"
+  };
+  const local = prepareProduct({ ...base, image: "data:image/webp;base64,QUJDRA==" });
+  const remote = prepareProduct({ ...base, image: "https://images.example/product.jpg" });
+  assert.equal(local.image, "data:image/webp;base64,QUJDRA==");
+  assert.equal(remote.image, "");
+});
+
 test("descarta detalles y variantes que en realidad son bloques completos de la página", () => {
   const product = prepareProduct({
     canonicalUrl: "https://m.shein.com.mx/product-p-42.html",
