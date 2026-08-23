@@ -1,18 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280">
-  <rect width="440" height="280" fill="#f2f1ec"/>
-  <rect x="34" y="36" width="112" height="112" rx="31" fill="#176b52"/>
-  <circle cx="90" cy="92" r="31" fill="none" stroke="#fbfaf6" stroke-width="10"/>
-  <polyline points="90,73 90,95 105,104" fill="none" stroke="#fbfaf6" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
-  <text x="34" y="188" fill="#1e241f" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="30" font-weight="700">Cuánto Era</text>
-  <text x="34" y="216" fill="#687068" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="14">Recuerda cuánto costaba.</text>
-  <rect x="248" y="38" width="158" height="204" rx="12" fill="#fbfaf6" stroke="#d7d9d2"/>
-  <text x="270" y="70" fill="#687068" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="10" font-weight="600">HISTORIAL LOCAL</text>
-  <text x="270" y="104" fill="#1e241f" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="700">$1,299</text>
-  <line x1="270" y1="124" x2="384" y2="124" stroke="#d7d9d2"/>
-  <text x="270" y="151" fill="#687068" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="11">Antes</text>
-  <text x="384" y="151" fill="#1e241f" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" text-anchor="end">$1,499</text>
-  <text x="270" y="180" fill="#687068" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="11">Cambio</text>
-  <text x="384" y="180" fill="#176b52" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700" text-anchor="end">−13.3%</text>
-  <rect x="270" y="201" width="114" height="22" rx="5" fill="#dfede7"/>
-  <text x="327" y="216" fill="#176b52" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="9" font-weight="700" text-anchor="middle">GUARDADO LOCALMENTE</text>
+  <rect width="440" height="280" fill="#125f49"/>
+
+  <g opacity="0.16" fill="#9ce2c5">
+    <circle cx="401" cy="25" r="3"/>
+    <circle cx="417" cy="25" r="3"/>
+    <circle cx="401" cy="41" r="3"/>
+    <circle cx="417" cy="41" r="3"/>
+  </g>
+
+  <g transform="translate(24 22)">
+    <rect width="52" height="52" rx="14" fill="#f5f1e8"/>
+    <circle cx="26" cy="26" r="15" fill="none" stroke="#125f49" stroke-width="5"/>
+    <path d="M26 14v13l8 7" fill="none" stroke="#125f49" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="90" y="55" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" letter-spacing="-0.5">Cuánto Era</text>
+
+  <text x="24" y="121" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" letter-spacing="-0.7">Recuerda</text>
+  <text x="24" y="153" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" letter-spacing="-0.7">cuánto costaba.</text>
+  <text x="24" y="182" fill="#bfe8d7" font-family="Arial, Helvetica, sans-serif" font-size="12">Guarda un precio. Compáralo después.</text>
+
+  <g transform="translate(291 89)">
+    <rect width="125" height="127" rx="16" fill="#f5f1e8"/>
+    <text x="17" y="24" fill="#69736d" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" letter-spacing="1">ANTES</text>
+    <text x="17" y="48" fill="#69736d" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">$1,499</text>
+    <line x1="16" y1="42" x2="72" y2="42" stroke="#9aa19c" stroke-width="1.5"/>
+    <line x1="16" y1="65" x2="109" y2="65" stroke="#d9dbd4"/>
+    <text x="17" y="86" fill="#69736d" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" letter-spacing="1">DESPUÉS</text>
+    <text x="17" y="113" fill="#125f49" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="-0.7">$1,299</text>
+  </g>
+
+  <g transform="translate(24 222)">
+    <rect width="197" height="30" rx="15" fill="#0d4939"/>
+    <circle cx="16" cy="15" r="4" fill="#8de0bb"/>
+    <text x="29" y="19" fill="#d8f2e7" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" letter-spacing="0.6">HISTORIAL LOCAL · SIN CUENTAS</text>
+  </g>
 </svg>
