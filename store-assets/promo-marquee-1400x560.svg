@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="560" viewBox="0 0 1400 560">
+  <rect width="1400" height="560" fill="#125f49"/>
+
+  <circle cx="1250" cy="34" r="210" fill="#167459"/>
+  <circle cx="1250" cy="34" r="150" fill="#1a7e60"/>
+  <g opacity="0.24" fill="#9ce2c5">
+    <circle cx="1308" cy="84" r="6"/>
+    <circle cx="1342" cy="84" r="6"/>
+    <circle cx="1376" cy="84" r="6"/>
+    <circle cx="1308" cy="118" r="6"/>
+    <circle cx="1342" cy="118" r="6"/>
+    <circle cx="1376" cy="118" r="6"/>
+  </g>
+
+  <g transform="translate(72 58)">
+    <rect width="88" height="88" rx="24" fill="#f5f1e8"/>
+    <circle cx="44" cy="44" r="26" fill="none" stroke="#125f49" stroke-width="8"/>
+    <path d="M44 23v23l14 12" fill="none" stroke="#125f49" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="184" y="116" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" letter-spacing="-1">Cuánto Era</text>
+
+  <text x="72" y="255" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="700" letter-spacing="-1.8">Recuerda cuánto</text>
+  <text x="72" y="322" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="700" letter-spacing="-1.8">costaba.</text>
+  <text x="74" y="373" fill="#c7ebdc" font-family="Arial, Helvetica, sans-serif" font-size="25">Guarda un precio. Compáralo después.</text>
+
+  <g transform="translate(72 430)">
+    <rect width="410" height="60" rx="30" fill="#0d4939"/>
+    <circle cx="31" cy="30" r="8" fill="#8de0bb"/>
+    <text x="56" y="38" fill="#d8f2e7" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="1.3">HISTORIAL LOCAL · SIN CUENTAS</text>
+  </g>
+
+  <path d="M1003 234 C1044 267 1082 294 1129 315" fill="none" stroke="#8de0bb" stroke-width="5" stroke-linecap="round" stroke-dasharray="4 15"/>
+
+  <g transform="rotate(-4 1050 180)">
+    <rect x="872" y="102" width="350" height="168" rx="28" fill="#f5f1e8"/>
+    <text x="910" y="148" fill="#69736d" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="2.4">ANTES</text>
+    <text x="910" y="219" fill="#69736d" font-family="Arial, Helvetica, sans-serif" font-size="51" font-weight="700" letter-spacing="-1.3">$1,499</text>
+    <line x1="905" y1="199" x2="1080" y2="199" stroke="#9aa19c" stroke-width="4"/>
+  </g>
+
+  <g transform="rotate(3 1146 392)">
+    <rect x="961" y="300" width="370" height="184" rx="30" fill="#dff3ea"/>
+    <text x="1002" y="350" fill="#4b6c5e" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="2.4">DESPUÉS</text>
+    <text x="1002" y="434" fill="#125f49" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700" letter-spacing="-2">$1,299</text>
+  </g>
+</svg>
